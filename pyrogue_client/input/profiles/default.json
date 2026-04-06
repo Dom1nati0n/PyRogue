@@ -1,0 +1,403 @@
+{
+  "name": "Default Input Profile",
+  "description": "Default input configuration for roguelike gameplay",
+  "_comment": "All keycodes reference pygame.K_* constants",
+
+  "actions": {
+    "move_north": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 273,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        },
+        {
+          "key": 107,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "move_south": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 274,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        },
+        {
+          "key": 106,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "move_west": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 276,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        },
+        {
+          "key": 104,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "move_east": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 275,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        },
+        {
+          "key": 108,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "move_northwest": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 121,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "move_northeast": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 117,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "move_southwest": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 98,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "move_southeast": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 110,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "wait": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 46,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        },
+        {
+          "key": 32,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "interact": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 101,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        },
+        {
+          "key": 13,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "look": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 108,
+          "modifier_keys": [1073742048],
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        },
+        {
+          "key": 59,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "inventory": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 105,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "character": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 99,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "abilities": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 97,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "drop": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 100,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "equip": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 101,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "use": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 117,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "messages": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 109,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "scroll_up": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 1073741899,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "scroll_down": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 1073741902,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "quick_save": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 1073741939,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "quick_load": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 1073741943,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "screenshot": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 1073741946,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "menu": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 27,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "confirm": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 13,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "cancel": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "key": 27,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "hotbar_1": {
+      "value_type": "digital",
+      "mappings": [{"key": 49}]
+    },
+    "hotbar_2": {
+      "value_type": "digital",
+      "mappings": [{"key": 50}]
+    },
+    "hotbar_3": {
+      "value_type": "digital",
+      "mappings": [{"key": 51}]
+    },
+    "hotbar_4": {
+      "value_type": "digital",
+      "mappings": [{"key": 52}]
+    },
+    "hotbar_5": {
+      "value_type": "digital",
+      "mappings": [{"key": 53}]
+    },
+    "hotbar_6": {
+      "value_type": "digital",
+      "mappings": [{"key": 54}]
+    },
+    "hotbar_7": {
+      "value_type": "digital",
+      "mappings": [{"key": 55}]
+    },
+    "hotbar_8": {
+      "value_type": "digital",
+      "mappings": [{"key": 56}]
+    },
+    "hotbar_9": {
+      "value_type": "digital",
+      "mappings": [{"key": 57}]
+    },
+    "hotbar_10": {
+      "value_type": "digital",
+      "mappings": [{"key": 48}]
+    },
+
+    "right_click": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "mouse_button": 3,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "left_click": {
+      "value_type": "digital",
+      "mappings": [
+        {
+          "mouse_button": 1,
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    },
+
+    "scroll": {
+      "value_type": "axis_1d",
+      "mappings": [
+        {
+          "axis": "axis_scroll",
+          "modifiers": [],
+          "triggers": [{"type": "triggered"}]
+        }
+      ]
+    }
+  }
+}
