@@ -1,0 +1,10 @@
+{
+  "spell_id": "teleport",
+  "spell_name": "Teleport",
+  "description": "Instantly move to target location, costing 10 AP",
+  "tags": ["teleport", "movement", "instant"],
+  "ap_cost": 10,
+  "cooldown": 20,
+  "range": 15,
+  "effects": []
+}

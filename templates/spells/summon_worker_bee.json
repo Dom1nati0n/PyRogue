@@ -1,0 +1,16 @@
+{
+  "spell_id": "summon_worker_bee",
+  "spell_name": "Summon Worker Bee Swarm",
+  "description": "The Architect summons a swarm of worker bees to construct the world",
+  "tags": ["summon", "world_gen", "construction"],
+  "ap_cost": 25,
+  "cooldown": 0,
+  "range": 0,
+  "effects": [
+    {
+      "type": "summon_entity",
+      "template": "worker_bee",
+      "count": 5
+    }
+  ]
+}

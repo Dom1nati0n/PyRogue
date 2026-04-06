@@ -1,0 +1,179 @@
+{
+  "comment": "Tile templates - dungeon and world terrain wired to tags.json Shape and Terrain ontology",
+  "tiles": {
+
+    "floor_stone": {
+      "sprite": ".",
+      "sprite_color": "dark_gray",
+      "tags": ["Shape.Floor", "Material.Stone.Granite"],
+      "properties": {
+        "movement_cost": 1.0,
+        "blocks_sight": false
+      }
+    },
+
+    "floor_dirt": {
+      "sprite": ".",
+      "sprite_color": "brown",
+      "tags": ["Shape.Floor", "Material.Stone"],
+      "properties": {
+        "movement_cost": 1.0,
+        "blocks_sight": false
+      }
+    },
+
+    "wall_stone": {
+      "sprite": "#",
+      "sprite_color": "gray",
+      "tags": ["Shape.Wall", "Material.Stone.Granite"],
+      "properties": {
+        "movement_cost": 0,
+        "blocks_sight": true
+      }
+    },
+
+    "wall_brick": {
+      "sprite": "#",
+      "sprite_color": "dark_red",
+      "tags": ["Shape.Wall", "Material.Stone.Limestone"],
+      "properties": {
+        "movement_cost": 0,
+        "blocks_sight": true
+      }
+    },
+
+    "door_closed": {
+      "sprite": "+",
+      "sprite_color": "brown",
+      "tags": ["Feature.Door.Closed", "Material.Wood.Oak"],
+      "properties": {
+        "movement_cost": 0,
+        "blocks_sight": true,
+        "interactive": true
+      }
+    },
+
+    "door_open": {
+      "sprite": "/",
+      "sprite_color": "brown",
+      "tags": ["Feature.Door.Open", "Material.Wood.Oak"],
+      "properties": {
+        "movement_cost": 1.0,
+        "blocks_sight": false,
+        "interactive": true
+      }
+    },
+
+    "stairs_down": {
+      "sprite": ">",
+      "sprite_color": "white",
+      "tags": ["Shape.Floor"],
+      "properties": {
+        "movement_cost": 1.0,
+        "blocks_sight": false,
+        "portal": true,
+        "portal_direction": "down"
+      }
+    },
+
+    "stairs_up": {
+      "sprite": "<",
+      "sprite_color": "white",
+      "tags": ["Shape.Floor"],
+      "properties": {
+        "movement_cost": 1.0,
+        "blocks_sight": false,
+        "portal": true,
+        "portal_direction": "up"
+      }
+    },
+
+    "terrain_grass": {
+      "sprite": ",",
+      "sprite_color": "green",
+      "tags": ["Terrain.Grass"],
+      "properties": {
+        "movement_cost": 1.0,
+        "blocks_sight": false
+      }
+    },
+
+    "terrain_forest": {
+      "sprite": "T",
+      "sprite_color": "dark_green",
+      "tags": ["Terrain.Forest", "Material.Wood"],
+      "properties": {
+        "movement_cost": 1.5,
+        "blocks_sight": true
+      }
+    },
+
+    "terrain_water_shallow": {
+      "sprite": "~",
+      "sprite_color": "blue",
+      "tags": ["Terrain.Water", "Material.Liquid.Water"],
+      "properties": {
+        "movement_cost": 2.0,
+        "blocks_sight": false,
+        "requires_swimming": false
+      }
+    },
+
+    "terrain_water_deep": {
+      "sprite": "~",
+      "sprite_color": "dark_blue",
+      "tags": ["Terrain.Water", "Material.Liquid.Water"],
+      "properties": {
+        "movement_cost": 0,
+        "blocks_sight": false,
+        "requires_swimming": true
+      }
+    },
+
+    "debris": {
+      "sprite": "%",
+      "sprite_color": "gray",
+      "tags": ["Shape.Debris", "Material.Stone"],
+      "properties": {
+        "movement_cost": 0,
+        "blocks_sight": false
+      }
+    },
+
+    "floor_lava": {
+      "sprite": "~",
+      "sprite_color": "orange",
+      "tags": ["Shape.Floor", "Material.Liquid.Magma", "Status.Burning"],
+      "properties": {
+        "movement_cost": 0,
+        "blocks_sight": false,
+        "damage_on_enter": 10,
+        "damage_type": "Fire"
+      }
+    },
+
+    "pressure_plate": {
+      "sprite": "^",
+      "sprite_color": "dark_gray",
+      "tags": ["Shape.Floor", "Trap.Mechanical.FloorSpikes"],
+      "properties": {
+        "movement_cost": 1.0,
+        "blocks_sight": false,
+        "trap": true,
+        "trap_hidden": true
+      }
+    },
+
+    "chest_closed": {
+      "sprite": "8",
+      "sprite_color": "yellow",
+      "tags": ["Container.Chest", "Material.Wood.Oak"],
+      "properties": {
+        "movement_cost": 0,
+        "blocks_sight": false,
+        "interactive": true,
+        "container": true
+      }
+    }
+  }
+}

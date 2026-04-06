@@ -1,0 +1,412 @@
+{
+  "comment": "Item templates in TemplateRegistry format - wired to tags.json Weapon/Armor/Consumable/Reagent ontology",
+  "items": {
+
+    "dagger": {
+      "display_name": "Dagger",
+      "description": "A short blade, easy to conceal.",
+      "sprite": "\\",
+      "sprite_color": "gray",
+      "tags": ["Weapon.Sword.Dirk", "Material.Metal.Iron"],
+      "properties": {
+        "base_damage": 4,
+        "damage_type": "Slashing",
+        "weight": 1.5
+      },
+      "durability": {"maximum": 70}
+    },
+
+    "longsword": {
+      "display_name": "Longsword",
+      "description": "A standard iron blade, dependable in a fight.",
+      "sprite": "/",
+      "sprite_color": "gray",
+      "tags": ["Weapon.Sword.Longsword", "Material.Metal.Iron"],
+      "properties": {
+        "base_damage": 8,
+        "damage_type": "Slashing",
+        "weight": 4.0
+      },
+      "durability": {"maximum": 100}
+    },
+
+    "mace": {
+      "display_name": "Mace",
+      "description": "Heavy and unsubtle. Works on armored foes.",
+      "sprite": ")",
+      "sprite_color": "gray",
+      "tags": ["Weapon.Blunt.Mace", "Material.Metal.Iron"],
+      "properties": {
+        "base_damage": 7,
+        "damage_type": "Bludgeoning",
+        "weight": 3.5
+      },
+      "durability": {"maximum": 90}
+    },
+
+    "warhammer": {
+      "display_name": "Warhammer",
+      "description": "Two-handed bludgeon. Shatters bone and dents plate alike.",
+      "sprite": ")",
+      "sprite_color": "dark_gray",
+      "tags": ["Weapon.Blunt.Warhammer", "Material.Metal.Iron"],
+      "properties": {
+        "base_damage": 12,
+        "damage_type": "Bludgeoning",
+        "weight": 6.0,
+        "two_handed": true
+      },
+      "durability": {"maximum": 120}
+    },
+
+    "spear": {
+      "display_name": "Spear",
+      "description": "Long reach, decent damage. Good for holding doorways.",
+      "sprite": "/",
+      "sprite_color": "brown",
+      "tags": ["Weapon.Polearm.Spear", "Material.Wood.Oak"],
+      "properties": {
+        "base_damage": 7,
+        "damage_type": "Piercing",
+        "weight": 3.0,
+        "reach_bonus": 1
+      },
+      "durability": {"maximum": 85}
+    },
+
+    "short_bow": {
+      "display_name": "Short Bow",
+      "description": "Ranged weapon. Requires arrows.",
+      "sprite": ")",
+      "sprite_color": "brown",
+      "tags": ["Weapon.Ranged.Bow", "Material.Wood.Oak"],
+      "properties": {
+        "base_damage": 8,
+        "damage_type": "Piercing",
+        "weight": 2.0,
+        "requires_ammo": true,
+        "ammo_type": "arrow"
+      },
+      "durability": {"maximum": 75}
+    },
+
+    "sling": {
+      "display_name": "Sling",
+      "description": "Hurls stones with surprising force.",
+      "sprite": ")",
+      "sprite_color": "tan",
+      "tags": ["Weapon.Ranged.Sling", "Material.Cloth"],
+      "properties": {
+        "base_damage": 5,
+        "damage_type": "Bludgeoning",
+        "weight": 0.5,
+        "requires_ammo": true,
+        "ammo_type": "stone"
+      },
+      "durability": {"maximum": 40}
+    },
+
+    "arrow": {
+      "display_name": "Arrow",
+      "description": "Standard fletched arrow.",
+      "sprite": "|",
+      "sprite_color": "brown",
+      "tags": ["Weapon.Exotic"],
+      "properties": {
+        "damage_bonus": 2,
+        "weight": 0.1
+      },
+      "stackable": {"max_stack": 30}
+    },
+
+    "stone": {
+      "display_name": "Stone",
+      "description": "A throwing stone for a sling.",
+      "sprite": "*",
+      "sprite_color": "gray",
+      "tags": ["Material.Stone"],
+      "properties": {
+        "damage_bonus": 0,
+        "weight": 0.2
+      },
+      "stackable": {"max_stack": 20}
+    },
+
+    "acid_syringe": {
+      "display_name": "Acid Syringe",
+      "description": "A glass syringe full of caustic fluid. Don't drop it.",
+      "sprite": "!",
+      "sprite_color": "yellow_green",
+      "tags": ["Weapon.Exotic.AcidSyringe", "Material.Glass"],
+      "properties": {
+        "base_damage": 8,
+        "damage_type": "Acid",
+        "weight": 0.4,
+        "inflicts_status": "Status.Burning"
+      },
+      "durability": {"maximum": 40},
+      "stackable": {"max_stack": 3}
+    },
+
+    "leather_armor": {
+      "display_name": "Leather Armor",
+      "description": "Supple and quiet. Won't stop a warhammer.",
+      "sprite": "]",
+      "sprite_color": "brown",
+      "tags": ["Armor.Chest.LeatherArmor", "Material.Leather"],
+      "properties": {
+        "armor_value": 2,
+        "weight": 15.0
+      },
+      "durability": {"maximum": 60}
+    },
+
+    "chain_mail": {
+      "display_name": "Chain Mail",
+      "description": "Interlocked rings. Good protection, noisy.",
+      "sprite": "]",
+      "sprite_color": "gray",
+      "tags": ["Armor.Chest.ChainMail", "Material.Metal.Iron"],
+      "properties": {
+        "armor_value": 5,
+        "weight": 30.0
+      },
+      "durability": {"maximum": 90}
+    },
+
+    "plate_mail": {
+      "display_name": "Plate Mail",
+      "description": "Full plate armor. Heavy but nearly impenetrable.",
+      "sprite": "]",
+      "sprite_color": "light_gray",
+      "tags": ["Armor.Chest.Platemail", "Material.Metal.Iron"],
+      "properties": {
+        "armor_value": 9,
+        "weight": 45.0
+      },
+      "durability": {"maximum": 120}
+    },
+
+    "potion_healing": {
+      "display_name": "Potion of Healing",
+      "description": "Bitter red liquid. Closes wounds on contact with blood.",
+      "sprite": "!",
+      "sprite_color": "red",
+      "tags": ["Consumable.Potion.HealingPotion"],
+      "properties": {
+        "heal_amount": 15,
+        "weight": 0.5
+      },
+      "stackable": {"max_stack": 10}
+    },
+
+    "potion_extra_healing": {
+      "display_name": "Potion of Extra Healing",
+      "description": "A concentrated healing draught.",
+      "sprite": "!",
+      "sprite_color": "bright_red",
+      "tags": ["Consumable.Potion.HealingPotion"],
+      "properties": {
+        "heal_amount": 35,
+        "weight": 0.5
+      },
+      "stackable": {"max_stack": 10}
+    },
+
+    "potion_haste": {
+      "display_name": "Potion of Haste",
+      "description": "Grants greatly increased speed for a short time.",
+      "sprite": "!",
+      "sprite_color": "green",
+      "tags": ["Consumable.Potion.HastePotion"],
+      "properties": {
+        "effect_type": "Haste",
+        "duration_ticks": 5,
+        "weight": 0.5
+      },
+      "stackable": {"max_stack": 5}
+    },
+
+    "potion_invisibility": {
+      "display_name": "Invisibility Draught",
+      "description": "You vanish from sight for a few turns.",
+      "sprite": "!",
+      "sprite_color": "pale_blue",
+      "tags": ["Consumable.Potion.InvisibilityDraught"],
+      "properties": {
+        "effect_type": "Invisibility",
+        "duration_ticks": 3,
+        "weight": 0.5
+      },
+      "stackable": {"max_stack": 5}
+    },
+
+    "scroll_identify": {
+      "display_name": "Scroll of Identify",
+      "description": "Read to reveal the true nature of an item.",
+      "sprite": "?",
+      "sprite_color": "white",
+      "tags": ["Consumable"],
+      "properties": {
+        "effect_type": "Identify",
+        "weight": 0.1
+      },
+      "stackable": {"max_stack": 5}
+    },
+
+    "scroll_teleport": {
+      "display_name": "Scroll of Teleportation",
+      "description": "Reads itself with a flash and a displacement.",
+      "sprite": "?",
+      "sprite_color": "cyan",
+      "tags": ["Consumable"],
+      "properties": {
+        "effect_type": "Teleport",
+        "weight": 0.1
+      },
+      "stackable": {"max_stack": 5}
+    },
+
+    "scroll_magic_mapping": {
+      "display_name": "Scroll of Magic Mapping",
+      "description": "The dungeon layout burns itself into your mind.",
+      "sprite": "?",
+      "sprite_color": "yellow",
+      "tags": ["Consumable"],
+      "properties": {
+        "effect_type": "MagicMapping",
+        "weight": 0.1
+      },
+      "stackable": {"max_stack": 3}
+    },
+
+    "gold_coin": {
+      "display_name": "Gold Coin",
+      "description": "Currency of the realm.",
+      "sprite": "$",
+      "sprite_color": "yellow",
+      "tags": ["Material.Metal.Gold"],
+      "properties": {
+        "value": 1,
+        "weight": 0.01
+      },
+      "stackable": {"max_stack": 999}
+    },
+
+    "food_ration": {
+      "display_name": "Food Ration",
+      "description": "Dry bread and salted meat. Not pleasant but filling.",
+      "sprite": "%",
+      "sprite_color": "tan",
+      "tags": ["Consumable"],
+      "properties": {
+        "nutrition": 800,
+        "weight": 0.8
+      },
+      "stackable": {"max_stack": 5}
+    },
+
+    "wild_garlic": {
+      "display_name": "Wild Garlic",
+      "description": "A pungent reagent. Certain creatures despise the smell.",
+      "sprite": "%",
+      "sprite_color": "white",
+      "tags": ["Consumable.Reagent.WildGarlic", "Material.Plant"],
+      "properties": {
+        "weight": 0.1
+      },
+      "stackable": {"max_stack": 10}
+    },
+
+    "wolfsbane": {
+      "display_name": "Wolfsbane",
+      "description": "Toxic to canines and lycanthropes.",
+      "sprite": "%",
+      "sprite_color": "purple",
+      "tags": ["Consumable.Reagent.Wolfsbane", "Material.Plant"],
+      "properties": {
+        "effective_against": "Werewolf",
+        "weight": 0.1
+      },
+      "stackable": {"max_stack": 10}
+    },
+
+    "salt": {
+      "display_name": "Salt",
+      "description": "Effective against spirits and the unliving.",
+      "sprite": "%",
+      "sprite_color": "white",
+      "tags": ["Consumable.Reagent.Salt"],
+      "properties": {
+        "effective_against": "Ghost",
+        "weight": 0.1
+      },
+      "stackable": {"max_stack": 20}
+    },
+
+    "bone": {
+      "display_name": "Bone",
+      "description": "A gnawed bone. Crafting material.",
+      "sprite": "%",
+      "sprite_color": "white",
+      "tags": ["Material"],
+      "properties": {
+        "weight": 0.3
+      },
+      "stackable": {"max_stack": 20}
+    },
+
+    "raw_meat": {
+      "display_name": "Raw Meat",
+      "description": "Uncooked flesh. Edible but risky.",
+      "sprite": "%",
+      "sprite_color": "red",
+      "tags": ["Consumable"],
+      "properties": {
+        "nutrition": 400,
+        "weight": 0.5,
+        "risk_of_illness": true
+      },
+      "stackable": {"max_stack": 5}
+    },
+
+    "wolf_pelt": {
+      "display_name": "Wolf Pelt",
+      "description": "A coarse hide. Sold to tanners or made into crude armor.",
+      "sprite": "%",
+      "sprite_color": "gray",
+      "tags": ["Material.Leather"],
+      "properties": {
+        "value": 8,
+        "weight": 2.0
+      },
+      "stackable": {"max_stack": 5}
+    },
+
+    "troll_hide": {
+      "display_name": "Troll Hide",
+      "description": "Thick, foul-smelling hide. Valued by armorers.",
+      "sprite": "%",
+      "sprite_color": "dark_green",
+      "tags": ["Material.Leather"],
+      "properties": {
+        "value": 25,
+        "weight": 5.0
+      },
+      "stackable": {"max_stack": 3}
+    },
+
+    "tattered_cloth": {
+      "display_name": "Tattered Cloth",
+      "description": "Shreds of rotten fabric. Mostly worthless.",
+      "sprite": "%",
+      "sprite_color": "dark_gray",
+      "tags": ["Material.Cloth"],
+      "properties": {
+        "value": 0,
+        "weight": 0.2
+      },
+      "stackable": {"max_stack": 10}
+    }
+  }
+}

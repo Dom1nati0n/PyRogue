@@ -1,0 +1,31 @@
+{
+  "entity_type": "worker_bee",
+  "display_name": "Worker Bee",
+  "description": "A laboring bee that carves tunnels and shapes the world",
+  "sprite": "b",
+  "sprite_color": "yellow",
+  "tags": ["NPC", "NPC.WorkerBee", "Builder", "Living"],
+  "properties": {
+    "max_health": 10,
+    "current_health": 10,
+    "max_ap": 100,
+    "current_ap": 100,
+    "ap_regen_rate": 10.0
+  },
+  "components": {
+    "Health": {
+      "maximum": 10,
+      "current": 10
+    },
+    "ActionPoints": {
+      "maximum": 100.0,
+      "current": 100.0,
+      "regen_rate": 10.0
+    },
+    "Memory": {},
+    "Brain": {
+      "root_node": null,
+      "template_id": "bee_drunkard"
+    }
+  }
+}

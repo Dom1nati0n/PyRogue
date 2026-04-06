@@ -1,0 +1,29 @@
+{
+  "template_id": "debug_cheese",
+  "display_name": "Debug Cheese",
+  "description": "A magical cheese for testing combat, inventory, and splitting. Can be used as a weapon, thrown as a projectile, or dropped to test ground items.",
+  "sprite": "c",
+  "sprite_color": "yellow",
+  "tags": [
+    "Item.Physical",
+    "Item.Weapon",
+    "Item.Consumable",
+    "Debug.Cheese",
+    "Debug.MultiSystem"
+  ],
+  "properties": {
+    "weight": 1.0,
+    "value": 0,
+    "melee_damage": 5,
+    "throw_damage": 15,
+    "split_threshold_percent": 30,
+    "split_count": 3,
+    "split_damage_reduction": 0.5,
+    "is_debug_item": true,
+    "test_mode": "active"
+  },
+  "durability": {
+    "maximum": 100.0,
+    "current": 100.0
+  }
+}

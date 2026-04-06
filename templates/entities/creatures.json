@@ -1,0 +1,493 @@
+{
+  "comment": "Creature templates - wired to tags.json ontology and AI decision tree system",
+  "creatures": {
+
+    "player_avatar": {
+      "display_name": "Adventurer",
+      "description": "You. Ready for whatever comes next.",
+      "sprite": "@",
+      "sprite_color": "white",
+      "tags": ["Living.Humanoid.Human", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Curious",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Exploring"
+      },
+      "properties": {
+        "max_health": 40,
+        "base_damage": 5,
+        "armor_value": 1,
+        "ap_max": 100,
+        "ap_regen_rate": 10.0,
+        "initiative_speed": 10.0,
+        "is_player": true
+      }
+    },
+
+    "rat": {
+      "display_name": "Rat",
+      "description": "A scrawny dungeon rat. Mostly harmless, mostly.",
+      "sprite": "r",
+      "sprite_color": "brown",
+      "tags": ["Living.Animal", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Cowardly",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Wandering"
+      },
+      "properties": {
+        "max_health": 4,
+        "base_damage": 1,
+        "armor_value": 0,
+        "ap_max": 100,
+        "ap_regen_rate": 15.0,
+        "initiative_speed": 14.0,
+        "xp_value": 1
+      },
+      "loot": {
+        "drop_chance": 0.2,
+        "entries": [
+          {"item_template": "bone", "weight": 1.0, "min_quantity": 1, "max_quantity": 1}
+        ]
+      }
+    },
+
+    "giant_rat": {
+      "display_name": "Giant Rat",
+      "description": "A rat the size of a dog. It does not flee.",
+      "sprite": "R",
+      "sprite_color": "dark_brown",
+      "tags": ["Living.Animal", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Aggressive",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Hunting"
+      },
+      "properties": {
+        "max_health": 12,
+        "base_damage": 3,
+        "armor_value": 0,
+        "ap_max": 100,
+        "ap_regen_rate": 12.0,
+        "initiative_speed": 11.0,
+        "xp_value": 5
+      },
+      "loot": {
+        "drop_chance": 0.5,
+        "entries": [
+          {"item_template": "raw_meat", "weight": 1.0, "min_quantity": 1, "max_quantity": 1}
+        ]
+      }
+    },
+
+    "zombie": {
+      "display_name": "Zombie",
+      "description": "A shambling corpse driven by hunger. It moves slowly but never tires.",
+      "sprite": "z",
+      "sprite_color": "pale_green",
+      "tags": ["Living.Humanoid", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Aggressive",
+        "starting_mood": "Mind.Mood.Angry",
+        "starting_urge": "Mind.Urge.Hunting"
+      },
+      "properties": {
+        "max_health": 20,
+        "base_damage": 4,
+        "armor_value": 1,
+        "ap_max": 100,
+        "ap_regen_rate": 5.0,
+        "initiative_speed": 5.0,
+        "ai_tree": "horde_zombie",
+        "xp_value": 8,
+        "undead": true
+      },
+      "loot": {
+        "drop_chance": 0.4,
+        "entries": [
+          {"item_template": "tattered_cloth", "weight": 2.0, "min_quantity": 1, "max_quantity": 1},
+          {"item_template": "bone", "weight": 1.0, "min_quantity": 1, "max_quantity": 2}
+        ]
+      }
+    },
+
+    "skeleton": {
+      "display_name": "Skeleton",
+      "description": "Animated bones. Immune to bleeding and poison.",
+      "sprite": "s",
+      "sprite_color": "white",
+      "tags": ["Living.Humanoid", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Aggressive",
+        "starting_mood": "Mind.Mood.Calm",
+        "starting_urge": "Mind.Urge.Patrolling"
+      },
+      "properties": {
+        "max_health": 15,
+        "base_damage": 5,
+        "armor_value": 2,
+        "ap_max": 100,
+        "ap_regen_rate": 9.0,
+        "initiative_speed": 9.0,
+        "xp_value": 10,
+        "undead": true,
+        "immune_bleed": true,
+        "immune_poison": true
+      },
+      "loot": {
+        "drop_chance": 0.6,
+        "entries": [
+          {"item_template": "bone", "weight": 3.0, "min_quantity": 1, "max_quantity": 4},
+          {"item_template": "dagger", "weight": 1.0, "min_quantity": 1, "max_quantity": 1}
+        ]
+      }
+    },
+
+    "ghost": {
+      "display_name": "Ghost",
+      "description": "A tormented spirit that passes through walls. Physical attacks barely hurt it.",
+      "sprite": "G",
+      "sprite_color": "light_blue",
+      "tags": ["Living.Humanoid", "Movement.Flying"],
+      "mind": {
+        "trait": "Mind.Trait.Aggressive",
+        "starting_mood": "Mind.Mood.Angry",
+        "starting_urge": "Mind.Urge.Hunting"
+      },
+      "properties": {
+        "max_health": 18,
+        "base_damage": 6,
+        "armor_value": 0,
+        "ap_max": 100,
+        "ap_regen_rate": 10.0,
+        "initiative_speed": 12.0,
+        "xp_value": 20,
+        "undead": true,
+        "phasing": true,
+        "physical_resistance": 0.5
+      },
+      "loot": {
+        "drop_chance": 0.3,
+        "entries": [
+          {"item_template": "salt", "weight": 1.0, "min_quantity": 1, "max_quantity": 1}
+        ]
+      }
+    },
+
+    "wolf": {
+      "display_name": "Wolf",
+      "description": "A pack predator. Emboldened when others of its kind are near.",
+      "sprite": "w",
+      "sprite_color": "gray",
+      "tags": ["Living.Animal", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Loyal",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Hunting"
+      },
+      "bond": {
+        "allegiance": "Bond.Allegiance.Wolfpack",
+        "role": "Bond.Role.Packmate",
+        "group_loyalty": 80
+      },
+      "properties": {
+        "max_health": 18,
+        "base_damage": 5,
+        "armor_value": 1,
+        "ap_max": 100,
+        "ap_regen_rate": 11.0,
+        "initiative_speed": 13.0,
+        "xp_value": 12
+      },
+      "loot": {
+        "drop_chance": 0.4,
+        "entries": [
+          {"item_template": "wolf_pelt", "weight": 1.0, "min_quantity": 1, "max_quantity": 1},
+          {"item_template": "raw_meat", "weight": 1.5, "min_quantity": 1, "max_quantity": 2}
+        ]
+      }
+    },
+
+    "wolf_alpha": {
+      "display_name": "Wolf Alpha",
+      "description": "The dominant wolf. Larger, faster, and its howl rallies the pack.",
+      "sprite": "W",
+      "sprite_color": "dark_gray",
+      "tags": ["Living.Animal", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Aggressive",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Hunting"
+      },
+      "bond": {
+        "allegiance": "Bond.Allegiance.Wolfpack",
+        "role": "Bond.Role.Alpha",
+        "group_loyalty": 90
+      },
+      "properties": {
+        "max_health": 35,
+        "base_damage": 9,
+        "armor_value": 2,
+        "ap_max": 100,
+        "ap_regen_rate": 12.0,
+        "initiative_speed": 14.0,
+        "xp_value": 30
+      },
+      "loot": {
+        "drop_chance": 0.8,
+        "entries": [
+          {"item_template": "wolf_pelt", "weight": 2.0, "min_quantity": 1, "max_quantity": 1},
+          {"item_template": "raw_meat", "weight": 1.0, "min_quantity": 2, "max_quantity": 3}
+        ]
+      }
+    },
+
+    "goblin": {
+      "display_name": "Goblin",
+      "description": "Small, malicious, and prone to panic when their numbers thin.",
+      "sprite": "g",
+      "sprite_color": "green",
+      "tags": ["Living.Humanoid", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Cowardly",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Patrolling"
+      },
+      "bond": {
+        "allegiance": "Bond.Allegiance.GoblinTribe",
+        "role": "Bond.Role.Follower",
+        "group_loyalty": 60
+      },
+      "properties": {
+        "max_health": 10,
+        "base_damage": 3,
+        "armor_value": 1,
+        "ap_max": 100,
+        "ap_regen_rate": 13.0,
+        "initiative_speed": 12.0,
+        "xp_value": 7
+      },
+      "loot": {
+        "drop_chance": 0.7,
+        "entries": [
+          {"item_template": "gold_coin", "weight": 2.0, "min_quantity": 1, "max_quantity": 5},
+          {"item_template": "dagger", "weight": 1.0, "min_quantity": 1, "max_quantity": 1}
+        ]
+      }
+    },
+
+    "goblin_shaman": {
+      "display_name": "Goblin Shaman",
+      "description": "A goblin who has learned a handful of nasty spells. Hangs back from melee.",
+      "sprite": "g",
+      "sprite_color": "purple",
+      "tags": ["Living.Humanoid", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Cowardly",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Guarding"
+      },
+      "bond": {
+        "allegiance": "Bond.Allegiance.GoblinTribe",
+        "role": "Bond.Role.Shaman",
+        "group_loyalty": 70
+      },
+      "properties": {
+        "max_health": 8,
+        "base_damage": 1,
+        "armor_value": 0,
+        "ap_max": 100,
+        "ap_regen_rate": 10.0,
+        "initiative_speed": 10.0,
+        "can_cast_spells": true,
+        "xp_value": 20
+      },
+      "loot": {
+        "drop_chance": 0.9,
+        "entries": [
+          {"item_template": "wild_garlic", "weight": 1.0, "min_quantity": 1, "max_quantity": 2},
+          {"item_template": "wolfsbane", "weight": 0.5, "min_quantity": 1, "max_quantity": 1},
+          {"item_template": "gold_coin", "weight": 1.5, "min_quantity": 2, "max_quantity": 8}
+        ]
+      }
+    },
+
+    "bandit": {
+      "display_name": "Bandit",
+      "description": "A desperate human who turned to violence. Better equipped than most.",
+      "sprite": "@",
+      "sprite_color": "tan",
+      "tags": ["Living.Humanoid.Human", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Aggressive",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Patrolling"
+      },
+      "bond": {
+        "allegiance": "Bond.Allegiance.BanditClan",
+        "role": "Bond.Role.Follower",
+        "group_loyalty": 50
+      },
+      "properties": {
+        "max_health": 22,
+        "base_damage": 6,
+        "armor_value": 3,
+        "ap_max": 100,
+        "ap_regen_rate": 10.0,
+        "initiative_speed": 10.0,
+        "xp_value": 18
+      },
+      "loot": {
+        "drop_chance": 0.8,
+        "entries": [
+          {"item_template": "gold_coin", "weight": 2.0, "min_quantity": 3, "max_quantity": 12},
+          {"item_template": "dagger", "weight": 1.0, "min_quantity": 1, "max_quantity": 1},
+          {"item_template": "leather_armor", "weight": 0.5, "min_quantity": 1, "max_quantity": 1}
+        ]
+      }
+    },
+
+    "bandit_captain": {
+      "display_name": "Bandit Captain",
+      "description": "Ruthless and experienced. Wears proper armor and has a plan.",
+      "sprite": "@",
+      "sprite_color": "red",
+      "tags": ["Living.Humanoid.Human", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Aggressive",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Hunting"
+      },
+      "bond": {
+        "allegiance": "Bond.Allegiance.BanditClan",
+        "role": "Bond.Role.Alpha",
+        "group_loyalty": 65
+      },
+      "properties": {
+        "max_health": 45,
+        "base_damage": 10,
+        "armor_value": 5,
+        "ap_max": 100,
+        "ap_regen_rate": 10.0,
+        "initiative_speed": 10.0,
+        "xp_value": 55,
+        "ai_tree": "smart_assassin"
+      },
+      "loot": {
+        "drop_chance": 1.0,
+        "entries": [
+          {"item_template": "gold_coin", "weight": 1.0, "min_quantity": 10, "max_quantity": 30},
+          {"item_template": "longsword", "weight": 1.0, "min_quantity": 1, "max_quantity": 1},
+          {"item_template": "chain_mail", "weight": 1.0, "min_quantity": 1, "max_quantity": 1}
+        ]
+      }
+    },
+
+    "troll": {
+      "display_name": "Troll",
+      "description": "A massive brute. Regenerates health each turn. Fire and acid stop it.",
+      "sprite": "T",
+      "sprite_color": "dark_green",
+      "tags": ["Living.Animal", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Aggressive",
+        "starting_mood": "Mind.Mood.Angry",
+        "starting_urge": "Mind.Urge.Hunting"
+      },
+      "properties": {
+        "max_health": 60,
+        "base_damage": 12,
+        "armor_value": 4,
+        "ap_max": 100,
+        "ap_regen_rate": 7.0,
+        "initiative_speed": 7.0,
+        "hp_regen_per_tick": 2,
+        "xp_value": 75,
+        "immune_fire": false,
+        "immune_acid": false
+      },
+      "loot": {
+        "drop_chance": 0.6,
+        "entries": [
+          {"item_template": "troll_hide", "weight": 1.0, "min_quantity": 1, "max_quantity": 1},
+          {"item_template": "raw_meat", "weight": 1.0, "min_quantity": 2, "max_quantity": 4}
+        ]
+      }
+    },
+
+    "assassin": {
+      "display_name": "Assassin",
+      "description": "A hired killer. Approaches from shadows, strikes once, vanishes.",
+      "sprite": "A",
+      "sprite_color": "dark_blue",
+      "tags": ["Living.Humanoid.Human", "Movement.Mobile"],
+      "mind": {
+        "trait": "Mind.Trait.Calm",
+        "starting_mood": "Mind.Mood.Alert",
+        "starting_urge": "Mind.Urge.Hunting"
+      },
+      "properties": {
+        "max_health": 30,
+        "base_damage": 14,
+        "armor_value": 2,
+        "ap_max": 100,
+        "ap_regen_rate": 11.0,
+        "initiative_speed": 15.0,
+        "ai_tree": "smart_assassin",
+        "xp_value": 90,
+        "sneak_bonus": 3
+      },
+      "loot": {
+        "drop_chance": 0.9,
+        "entries": [
+          {"item_template": "gold_coin", "weight": 1.0, "min_quantity": 15, "max_quantity": 40},
+          {"item_template": "dagger", "weight": 2.0, "min_quantity": 1, "max_quantity": 2},
+          {"item_template": "acid_syringe", "weight": 0.5, "min_quantity": 1, "max_quantity": 1}
+        ]
+      }
+    }
+  },
+
+  "groups": {
+    "wolfpack": {
+      "description": "A hunting pack led by an alpha",
+      "leader_template": "wolf_alpha",
+      "member_templates": ["wolf", "wolf", "wolf"],
+      "allegiance": "Bond.Allegiance.Wolfpack",
+      "leader_to_member_strength": 85,
+      "member_to_member_strength": 65
+    },
+    "goblin_warband": {
+      "description": "A goblin raiding party with a shaman",
+      "leader_template": "goblin_shaman",
+      "member_templates": ["goblin", "goblin", "goblin", "goblin"],
+      "allegiance": "Bond.Allegiance.GoblinTribe",
+      "leader_to_member_strength": 70,
+      "member_to_member_strength": 55
+    },
+    "bandit_gang": {
+      "description": "A road gang with a ruthless captain",
+      "leader_template": "bandit_captain",
+      "member_templates": ["bandit", "bandit", "bandit"],
+      "allegiance": "Bond.Allegiance.BanditClan",
+      "leader_to_member_strength": 65,
+      "member_to_member_strength": 45
+    },
+    "zombie_horde": {
+      "description": "A shambling mob of undead",
+      "leader_template": "zombie",
+      "member_templates": ["zombie", "zombie", "zombie", "zombie", "zombie"],
+      "allegiance": null,
+      "leader_to_member_strength": 0,
+      "member_to_member_strength": 0
+    },
+    "rat_nest": {
+      "description": "A nest of vermin disturbed",
+      "leader_template": "giant_rat",
+      "member_templates": ["rat", "rat", "rat", "rat"],
+      "allegiance": null,
+      "leader_to_member_strength": 0,
+      "member_to_member_strength": 20
+    }
+  }
+}
