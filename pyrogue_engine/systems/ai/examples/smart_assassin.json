@@ -1,0 +1,27 @@
+{
+  "type": "Fallback",
+  "comment": "Smart assassin: attack if adjacent, chase if target visible, wander",
+  "children": [
+    {
+      "type": "Routine",
+      "comment": "If we have a target and it's adjacent, attack it",
+      "children": [
+        {"type": "ConditionHasTarget"},
+        {"type": "ConditionTargetAdjacent"},
+        {"type": "ActionMeleeAttack"}
+      ]
+    },
+    {
+      "type": "Routine",
+      "comment": "If we have a target that's still alive, chase it using JPS",
+      "children": [
+        {"type": "ConditionHasTarget"},
+        {"type": "ConditionTargetAlive"},
+        {"type": "ActionJPSMove"}
+      ]
+    },
+    {
+      "type": "ActionWander"
+    }
+  ]
+}

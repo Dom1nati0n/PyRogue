@@ -1,0 +1,69 @@
+{
+  "name": "The Architect - Resident God",
+  "description": "Immortal entity that orchestrates world generation. Summons worker bees in phases and broadcasts messages to players.",
+  "root": {
+    "type": "Fallback",
+    "children": [
+      {
+        "type": "Routine",
+        "children": [
+          {
+            "type": "IsPhaseCondition",
+            "params": {
+              "target_phase": 1
+            }
+          },
+          {
+            "type": "BroadcastMessageAction",
+            "params": {
+              "msg": "The Architect decrees: Let the depths be carved."
+            }
+          },
+          {
+            "type": "CastSpellAction",
+            "params": {
+              "spell_id": "summon_worker_bee"
+            }
+          }
+        ]
+      },
+      {
+        "type": "Routine",
+        "children": [
+          {
+            "type": "IsPhaseCondition",
+            "params": {
+              "target_phase": 2
+            }
+          },
+          {
+            "type": "BroadcastMessageAction",
+            "params": {
+              "msg": "The Architect decrees: The waters are set."
+            }
+          }
+        ]
+      },
+      {
+        "type": "Routine",
+        "children": [
+          {
+            "type": "IsPhaseCondition",
+            "params": {
+              "target_phase": 3
+            }
+          },
+          {
+            "type": "BroadcastMessageAction",
+            "params": {
+              "msg": "The world is ready. Welcome, travelers."
+            }
+          }
+        ]
+      },
+      {
+        "type": "ActionWait"
+      }
+    ]
+  }
+}

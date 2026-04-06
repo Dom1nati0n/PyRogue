@@ -1,0 +1,36 @@
+{
+  "name": "Architect Bee (Phase 1 Smoother)",
+  "description": "Follows the Drunkards in 3D space, applying Cellular Automata to smooth tunnels and ensure rooms are well-formed. Ensures the map looks intentional, not random.",
+  "type": "Routine",
+  "children": [
+    {
+      "type": "IsPhaseCondition",
+      "params": {
+        "target_phase": 1
+      }
+    },
+    {
+      "type": "CooldownGuard",
+      "params": {
+        "cooldown": 0.5,
+        "memory_key": "last_automata_build"
+      },
+      "children": [
+        {
+          "type": "Routine",
+          "children": [
+            {
+              "type": "Wander3DAction"
+            },
+            {
+              "type": "AutomataStepAction",
+              "params": {
+                "wall_tag": "Terrain.Wall.Stone"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

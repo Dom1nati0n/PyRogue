@@ -1,0 +1,100 @@
+{
+  "comment": "Simple item tables - classic roguelike style",
+  "weapons": [
+    {"id": "mace", "name": "Mace", "symbol": ")", "damage": "2d4", "enchantment": 0, "weight": 3.5},
+    {"id": "longsword", "name": "Long Sword", "symbol": "/", "damage": "3d4", "enchantment": 0, "weight": 4.0},
+    {"id": "twohanded_sword", "name": "Two-Handed Sword", "symbol": "/", "damage": "4d4", "enchantment": 0, "weight": 5.0},
+    {"id": "dagger", "name": "Dagger", "symbol": "\\", "damage": "1d6", "enchantment": 0, "weight": 1.5},
+    {"id": "spear", "name": "Spear", "symbol": "/", "damage": "2d3", "enchantment": 0, "weight": 3.0},
+    {"id": "short_bow", "name": "Short Bow", "symbol": ")", "damage": "1d1", "enchantment": 0, "weight": 2.0, "type": "ranged"},
+    {"id": "arrow", "name": "Arrow", "symbol": "|", "damage": "2d3", "enchantment": 0, "weight": 0.1, "stackable": 30},
+    {"id": "dart", "name": "Dart", "symbol": "|", "damage": "1d3", "enchantment": 0, "weight": 0.05, "stackable": 30},
+    {"id": "shuriken", "name": "Shuriken", "symbol": "*", "damage": "2d4", "enchantment": 0, "weight": 0.2, "stackable": 20}
+  ],
+  "armor": [
+    {"id": "leather_armor", "name": "Leather Armor", "symbol": "]", "ac": 8, "enchantment": 0, "weight": 15.0},
+    {"id": "ring_mail", "name": "Ring Mail", "symbol": "]", "ac": 7, "enchantment": 0, "weight": 20.0},
+    {"id": "studded_leather", "name": "Studded Leather", "symbol": "]", "ac": 7, "enchantment": 0, "weight": 18.0},
+    {"id": "scale_mail", "name": "Scale Mail", "symbol": "]", "ac": 6, "enchantment": 0, "weight": 25.0},
+    {"id": "chain_mail", "name": "Chain Mail", "symbol": "]", "ac": 5, "enchantment": 0, "weight": 30.0},
+    {"id": "splint_mail", "name": "Splint Mail", "symbol": "]", "ac": 4, "enchantment": 0, "weight": 35.0},
+    {"id": "banded_mail", "name": "Banded Mail", "symbol": "]", "ac": 4, "enchantment": 0, "weight": 35.0},
+    {"id": "plate_mail", "name": "Plate Mail", "symbol": "]", "ac": 3, "enchantment": 0, "weight": 45.0}
+  ],
+  "potions": [
+    {"id": "potion_gain_strength", "name": "Potion of Gain Strength", "symbol": "!", "effect": "gain_strength", "color": "red"},
+    {"id": "potion_healing", "name": "Potion of Healing", "symbol": "!", "effect": "healing", "color": "blue"},
+    {"id": "potion_extra_healing", "name": "Potion of Extra Healing", "symbol": "!", "effect": "extra_healing", "color": "blue"},
+    {"id": "potion_restore_strength", "name": "Potion of Restore Strength", "symbol": "!", "effect": "restore_strength", "color": "red"},
+    {"id": "potion_raise_level", "name": "Potion of Raise Level", "symbol": "!", "effect": "raise_level", "color": "magenta"},
+    {"id": "potion_see_invisible", "name": "Potion of See Invisible", "symbol": "!", "effect": "see_invisible", "color": "cyan"},
+    {"id": "potion_haste_self", "name": "Potion of Haste Self", "symbol": "!", "effect": "haste_self", "color": "green"},
+    {"id": "potion_monster_detection", "name": "Potion of Monster Detection", "symbol": "!", "effect": "monster_detection", "color": "yellow"},
+    {"id": "potion_magic_detection", "name": "Potion of Magic Detection", "symbol": "!", "effect": "magic_detection", "color": "cyan"},
+    {"id": "potion_confusion", "name": "Potion of Confusion", "symbol": "!", "effect": "confusion", "color": "orange"},
+    {"id": "potion_poison", "name": "Potion of Poison", "symbol": "!", "effect": "poison", "color": "green"},
+    {"id": "potion_blindness", "name": "Potion of Blindness", "symbol": "!", "effect": "blindness", "color": "black"},
+    {"id": "potion_paralysis", "name": "Potion of Paralysis", "symbol": "!", "effect": "paralysis", "color": "gray"},
+    {"id": "potion_levitation", "name": "Potion of Levitation", "symbol": "!", "effect": "levitation", "color": "white"},
+    {"id": "potion_thirst_quenching", "name": "Potion of Thirst Quenching", "symbol": "!", "effect": "none", "color": "gray"}
+  ],
+  "scrolls": [
+    {"id": "scroll_enchant_weapon", "name": "Scroll of Enchant Weapon", "symbol": "?", "effect": "enchant_weapon"},
+    {"id": "scroll_enchant_armor", "name": "Scroll of Enchant Armor", "symbol": "?", "effect": "enchant_armor"},
+    {"id": "scroll_identify", "name": "Scroll of Identify", "symbol": "?", "effect": "identify"},
+    {"id": "scroll_remove_curse", "name": "Scroll of Remove Curse", "symbol": "?", "effect": "remove_curse"},
+    {"id": "scroll_magic_mapping", "name": "Scroll of Magic Mapping", "symbol": "?", "effect": "magic_mapping"},
+    {"id": "scroll_teleportation", "name": "Scroll of Teleportation", "symbol": "?", "effect": "teleportation"},
+    {"id": "scroll_monster_confusion", "name": "Scroll of Monster Confusion", "symbol": "?", "effect": "monster_confusion"},
+    {"id": "scroll_hold_monster", "name": "Scroll of Hold Monster", "symbol": "?", "effect": "hold_monster"},
+    {"id": "scroll_scare_monster", "name": "Scroll of Scare Monster", "symbol": "?", "effect": "scare_monster"},
+    {"id": "scroll_food_detection", "name": "Scroll of Food Detection", "symbol": "?", "effect": "food_detection"},
+    {"id": "scroll_create_monster", "name": "Scroll of Create Monster", "symbol": "?", "effect": "create_monster"},
+    {"id": "scroll_aggravate_monsters", "name": "Scroll of Aggravate Monsters", "symbol": "?", "effect": "aggravate_monsters"},
+    {"id": "scroll_sleep", "name": "Scroll of Sleep", "symbol": "?", "effect": "sleep"},
+    {"id": "scroll_blank_paper", "name": "Blank Paper", "symbol": "?", "effect": "none"},
+    {"id": "scroll_vorpalize_weapon", "name": "Scroll of Vorpalize Weapon", "symbol": "?", "effect": "vorpalize_weapon"},
+    {"id": "scroll_protect_armor", "name": "Scroll of Protect Armor", "symbol": "?", "effect": "protect_armor"},
+    {"id": "scroll_maintain_armor", "name": "Scroll of Maintain Armor", "symbol": "?", "effect": "maintain_armor"}
+  ],
+  "rings": [
+    {"id": "ring_slow_digestion", "name": "Ring of Slow Digestion", "symbol": "=", "effect": "slow_digestion"},
+    {"id": "ring_regeneration", "name": "Ring of Regeneration", "symbol": "=", "effect": "regeneration"},
+    {"id": "ring_protection", "name": "Ring of Protection", "symbol": "=", "effect": "protection", "ac_bonus": 1},
+    {"id": "ring_add_strength", "name": "Ring of Add Strength", "symbol": "=", "effect": "add_strength", "strength_bonus": 1},
+    {"id": "ring_increase_damage", "name": "Ring of Increase Damage", "symbol": "=", "effect": "increase_damage", "damage_bonus": 1},
+    {"id": "ring_dexterity", "name": "Ring of Dexterity", "symbol": "=", "effect": "dexterity"},
+    {"id": "ring_sustain_strength", "name": "Ring of Sustain Strength", "symbol": "=", "effect": "sustain_strength"},
+    {"id": "ring_see_invisible", "name": "Ring of See Invisible", "symbol": "=", "effect": "see_invisible"},
+    {"id": "ring_searching", "name": "Ring of Searching", "symbol": "=", "effect": "searching"},
+    {"id": "ring_stealth", "name": "Ring of Stealth", "symbol": "=", "effect": "stealth"},
+    {"id": "ring_maintain_armor", "name": "Ring of Maintain Armor", "symbol": "=", "effect": "maintain_armor"},
+    {"id": "ring_adornment", "name": "Ring of Adornment", "symbol": "=", "effect": "adornment", "value": 50},
+    {"id": "ring_aggravate_monster", "name": "Ring of Aggravate Monster", "symbol": "=", "effect": "aggravate_monster", "cursed": true},
+    {"id": "ring_teleportation", "name": "Ring of Teleportation", "symbol": "=", "effect": "teleportation", "cursed": true}
+  ],
+  "wands": [
+    {"id": "wand_light", "name": "Wand of Light", "symbol": "/", "effect": "light", "charges": 10},
+    {"id": "wand_striking", "name": "Wand of Striking", "symbol": "/", "effect": "striking", "charges": 5, "damage": "1d8"},
+    {"id": "wand_magic_missile", "name": "Wand of Magic Missile", "symbol": "/", "effect": "magic_missile", "charges": 5, "damage": "1d4"},
+    {"id": "wand_lightning", "name": "Wand of Lightning", "symbol": "/", "effect": "lightning", "charges": 5, "damage": "6d6"},
+    {"id": "wand_fire", "name": "Wand of Fire", "symbol": "/", "effect": "fire", "charges": 5, "damage": "6d6"},
+    {"id": "wand_cold", "name": "Wand of Cold", "symbol": "/", "effect": "cold", "charges": 5, "damage": "6d6"},
+    {"id": "wand_polymorph", "name": "Wand of Polymorph", "symbol": "/", "effect": "polymorph", "charges": 5},
+    {"id": "wand_teleport_away", "name": "Wand of Teleport Away", "symbol": "/", "effect": "teleport_away", "charges": 5},
+    {"id": "wand_teleport_to", "name": "Wand of Teleport To", "symbol": "/", "effect": "teleport_to", "charges": 5},
+    {"id": "wand_haste_monster", "name": "Wand of Haste Monster", "symbol": "/", "effect": "haste_monster", "charges": 5},
+    {"id": "wand_slow_monster", "name": "Wand of Slow Monster", "symbol": "/", "effect": "slow_monster", "charges": 5},
+    {"id": "wand_cancellation", "name": "Wand of Cancellation", "symbol": "/", "effect": "cancellation", "charges": 5},
+    {"id": "wand_drain_life", "name": "Wand of Drain Life", "symbol": "/", "effect": "drain_life", "charges": 5, "damage": "1d8"},
+    {"id": "wand_invisibility", "name": "Wand of Invisibility", "symbol": "/", "effect": "invisibility", "charges": 5},
+    {"id": "wand_nothing", "name": "Wand of Nothing", "symbol": "/", "effect": "none", "charges": 5}
+  ],
+  "consumables": [
+    {"id": "food_ration", "name": "Food Ration", "symbol": "%", "nutrition": 800},
+    {"id": "gold", "name": "Gold", "symbol": "$", "value": 1, "stackable": 999}
+  ],
+  "artifacts": [
+    {"id": "amulet_of_yendor", "name": "Amulet of Yendor", "symbol": "&", "effect": "win_condition", "description": "Return to surface to win"}
+  ]
+}

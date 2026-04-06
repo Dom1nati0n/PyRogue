@@ -1,0 +1,27 @@
+{
+  "type": "Fallback",
+  "comment": "Horde zombie: attack if adjacent, swarm using flow field, wander",
+  "children": [
+    {
+      "type": "Routine",
+      "comment": "If we're next to the target, attack it",
+      "children": [
+        {"type": "ConditionHasTarget"},
+        {"type": "ConditionTargetAdjacent"},
+        {"type": "ActionMeleeAttack"}
+      ]
+    },
+    {
+      "type": "Routine",
+      "comment": "If target is alive, use O(1) flow field to swarm them",
+      "children": [
+        {"type": "ConditionHasTarget"},
+        {"type": "ConditionTargetAlive"},
+        {"type": "ActionFlowFieldMove"}
+      ]
+    },
+    {
+      "type": "ActionWander"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Scout Bee (Phase 3 Topology Mapper)",
+  "description": "Explores the dug-out 3D areas, dropping invisible breadcrumbs (pheromone markers) at each Z-layer. The highest number represents the furthest point from the start, replacing server-side Dijkstra computation.",
+  "type": "Routine",
+  "children": [
+    {
+      "type": "IsPhaseCondition",
+      "params": {
+        "target_phase": 3
+      }
+    },
+    {
+      "type": "Wander3DAction"
+    },
+    {
+      "type": "DropPheromoneAction"
+    }
+  ]
+}

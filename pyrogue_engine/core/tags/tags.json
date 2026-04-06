@@ -1,0 +1,1417 @@
+{
+  "comment": "Tag Ontology - Hierarchical property inheritance system. Child properties override parent properties.",
+  "tags": {
+    "Material": {
+      "properties": {},
+      "children": {
+        "Metal": {
+          "properties": {
+            "Conductive": true,
+            "Opaque": true,
+            "AcousticDampening": 5
+          },
+          "children": {
+            "Iron": {
+              "properties": {
+                "Magnetic": true,
+                "ThermalLimit": 1538,
+                "Integrity": 100,
+                "TransitionResult": "Material.Liquid.Magma"
+              }
+            },
+            "Copper": {
+              "properties": {
+                "ThermalLimit": 1085,
+                "TransitionResult": "Material.Liquid.MoltenCopper"
+              }
+            },
+            "Gold": {
+              "properties": {
+                "ThermalLimit": 1064,
+                "TransitionResult": "Material.Liquid.MoltenGold"
+              }
+            }
+          }
+        },
+        "Stone": {
+          "properties": {
+            "Opaque": true,
+            "Resistance.Fire": true,
+            "AcousticDampening": 8
+          },
+          "children": {
+            "Granite": {
+              "properties": {
+                "ThermalLimit": 1200,
+                "TransitionResult": "Material.Liquid.Lava"
+              }
+            },
+            "Limestone": {
+              "properties": {
+                "ThermalLimit": 900,
+                "TransitionResult": "Material.Liquid.LimestoneSlurry"
+              }
+            }
+          }
+        },
+        "Wood": {
+          "properties": {
+            "Fuel": true,
+            "IgnitionPoint": 300,
+            "ThermalLimit": 400,
+            "AcousticDampening": 3
+          },
+          "children": {
+            "Oak": {
+              "properties": {
+                "TransitionResult": "Material.Charcoal"
+              }
+            },
+            "Pine": {
+              "properties": {
+                "Flammability": 1.2,
+                "TransitionResult": "Material.Charcoal"
+              }
+            }
+          }
+        },
+        "Cloth": {
+          "properties": {
+            "Fuel": true,
+            "IgnitionPoint": 200,
+            "ThermalLimit": 250,
+            "TransitionResult": "Material.Ash",
+            "Property.Fragile": true
+          }
+        },
+        "Leather": {
+          "properties": {
+            "ThermalLimit": 400,
+            "TransitionResult": "Material.CharredScraps",
+            "Resistance.Cut": true
+          }
+        },
+        "Glass": {
+          "properties": {
+            "Opaque": false,
+            "ThermalLimit": 300,
+            "TransitionResult": "Material.MoltenGlass",
+            "Property.Fragile": true
+          }
+        },
+        "Liquid": {
+          "properties": {
+            "Phase": "Liquid"
+          },
+          "children": {
+            "Water": {
+              "properties": {
+                "ThermalLimit": 100,
+                "TransitionResult": "Material.Gas.Steam",
+                "Resistance.Fire": true
+              }
+            },
+            "Magma": {
+              "properties": {
+                "Temperature": 1200,
+                "Fuel": true
+              }
+            },
+            "Oil": {
+              "properties": {
+                "Fuel": true,
+                "ThermalLimit": 200,
+                "TransitionResult": "Material.Gas.OilSmoke",
+                "Flammability": 1.5
+              }
+            }
+          }
+        },
+        "Gas": {
+          "properties": {
+            "Phase": "Gas",
+            "Fuel": true
+          },
+          "children": {
+            "Steam": {
+              "properties": {}
+            },
+            "OilSmoke": {
+              "properties": {}
+            }
+          }
+        },
+        "Charcoal": {
+          "properties": {
+            "Fuel": true,
+            "ThermalLimit": 700,
+            "TransitionResult": "Material.Ash",
+            "Flammability": 0.8
+          }
+        },
+        "Ash": {
+          "properties": {
+            "Fuel": false,
+            "Resistance.Fire": true,
+            "Phase": "Solid"
+          }
+        }
+      }
+    },
+    "Living": {
+      "properties": {},
+      "children": {
+        "Humanoid": {
+          "properties": {
+            "ThermalLimit": 40,
+            "Integrity": 100,
+            "Metabolism": true,
+            "Respiration": true,
+            "TransitionResult": "Material.Gore.Sludge"
+          },
+          "children": {
+            "Human": {
+              "properties": {}
+            }
+          }
+        },
+        "Animal": {
+          "properties": {}
+        },
+        "Plant": {
+          "properties": {
+            "ThermalLimit": 65,
+            "Fuel": true
+          }
+        }
+      }
+    },
+    "Feature": {
+      "properties": {},
+      "children": {
+        "Door": {
+          "properties": {
+            "Passable": false
+          },
+          "children": {
+            "Open": {
+              "properties": {
+                "Passable": true
+              }
+            },
+            "Closed": {
+              "properties": {
+                "Passable": false
+              }
+            }
+          }
+        },
+        "Window": {
+          "properties": {
+            "Transparent": true
+          }
+        }
+      }
+    },
+    "Shape": {
+      "properties": {},
+      "children": {
+        "Solid": {
+          "properties": {
+            "Opaque": true
+          }
+        },
+        "Floor": {
+          "properties": {
+            "Passable": true
+          }
+        },
+        "Wall": {
+          "properties": {
+            "Passable": false,
+            "Opaque": true
+          }
+        },
+        "Debris": {
+          "properties": {
+            "Passable": false
+          }
+        }
+      }
+    },
+    "Logic": {
+      "properties": {},
+      "children": {
+        "Conductor": {
+          "properties": {
+            "Conductive": true,
+            "Resistance": 1
+          }
+        },
+        "Output": {
+          "properties": {
+            "OutputValue": 7
+          }
+        },
+        "Input": {
+          "properties": {
+            "InputThreshold": 3
+          }
+        },
+        "Storage": {
+          "properties": {
+            "EnergyStored": 0,
+            "Capacity": 50,
+            "Discharge": false
+          }
+        },
+        "Sensor": {
+          "properties": {
+            "SensorRange": 5
+          }
+        },
+        "Actuator": {
+          "properties": {
+            "ActuatorState": false
+          }
+        },
+        "Trigger": {
+          "properties": {}
+        }
+      }
+    },
+    "Status": {
+      "properties": {},
+      "children": {
+        "Burning": {
+          "properties": {
+            "Temperature": 500,
+            "Damage.PerTurn": 5
+          }
+        },
+        "Melting": {
+          "properties": {
+            "Temperature": 300
+          }
+        },
+        "Charring": {
+          "properties": {
+            "Temperature": 200
+          }
+        },
+        "Soaked": {
+          "properties": {
+            "Resistance.Fire": true
+          }
+        },
+        "Hot": {
+          "properties": {
+            "Temperature": 100
+          }
+        },
+        "Cold": {
+          "properties": {
+            "Temperature": 0
+          }
+        },
+        "Brittle": {
+          "properties": {
+            "Damage.Multiplier": 1.5
+          }
+        }
+      }
+    },
+    "Property": {
+      "properties": {},
+      "children": {
+        "Fragile": {
+          "properties": {
+            "Durability.Multiplier": 0.5
+          }
+        },
+        "Conductive": {
+          "properties": {
+            "Conductive": true
+          }
+        },
+        "Magnetic": {
+          "properties": {
+            "Magnetic": true
+          }
+        }
+      }
+    },
+    "Resistance": {
+      "properties": {},
+      "children": {
+        "Fire": {
+          "properties": {
+            "Resistance.Fire": true
+          }
+        },
+        "Cold": {
+          "properties": {
+            "Resistance.Cold": true
+          }
+        },
+        "Cut": {
+          "properties": {
+            "Resistance.Cut": true
+          }
+        },
+        "Blunt": {
+          "properties": {
+            "Resistance.Blunt": true
+          }
+        },
+        "Electricity": {
+          "properties": {
+            "Resistance.Electricity": true
+          }
+        }
+      }
+    },
+    "Phase": {
+      "properties": {},
+      "children": {
+        "Solid": {
+          "properties": {
+            "Phase": "Solid"
+          }
+        },
+        "Liquid": {
+          "properties": {
+            "Phase": "Liquid"
+          }
+        },
+        "Gas": {
+          "properties": {
+            "Phase": "Gas"
+          }
+        }
+      }
+    },
+    "Movement": {
+      "properties": {},
+      "children": {
+        "Mobile": {
+          "properties": {
+            "CanMove": true
+          }
+        },
+        "Flying": {
+          "properties": {
+            "CanMove": true,
+            "CanFly": true,
+            "AvoidsObstacles": false
+          }
+        },
+        "Swimming": {
+          "properties": {
+            "CanMove": true,
+            "RequiresWater": true
+          }
+        }
+      }
+    },
+    "Container": {
+      "properties": {},
+      "children": {
+        "Inventory": {
+          "properties": {
+            "Capacity": 20
+          }
+        },
+        "Chest": {
+          "properties": {
+            "Capacity": 50
+          }
+        },
+        "Sack": {
+          "properties": {
+            "Capacity": 30
+          }
+        }
+      }
+    },
+    "Terrain": {
+      "properties": {},
+      "children": {
+        "Grass": {
+          "properties": {
+            "Passable": true,
+            "MovementCost": 1.0,
+            "AcousticDampening": 2
+          }
+        },
+        "Forest": {
+          "properties": {
+            "Passable": true,
+            "MovementCost": 1.5,
+            "AcousticDampening": 5,
+            "BlocksView": true
+          }
+        },
+        "Mountain": {
+          "properties": {
+            "Passable": false,
+            "Opaque": true
+          }
+        },
+        "Water": {
+          "properties": {
+            "Passable": true,
+            "MovementCost": 2.0,
+            "RequiresSwimming": true
+          }
+        },
+        "Desert": {
+          "properties": {
+            "Passable": true,
+            "MovementCost": 1.2,
+            "Temperature": 50
+          }
+        }
+      }
+    },
+    "Mind": {
+      "properties": {},
+      "children": {
+        "Trait": {
+          "properties": {},
+          "children": {
+            "Aggressive": {
+              "properties": {
+                "UrgeBonus": "Hunting",
+                "DamageBonusMultiplier": 1.1
+              }
+            },
+            "Cowardly": {
+              "properties": {
+                "UrgeBonus": "Fleeing",
+                "DefenseMultiplier": 1.2
+              }
+            },
+            "Curious": {
+              "properties": {
+                "UrgeBonus": "Exploring",
+                "VisionRange": 1.5
+              }
+            },
+            "Loyal": {
+              "properties": {
+                "UrgeBonus": "Guarding",
+                "BondStrength": "Strong"
+              }
+            },
+            "Calm": {
+              "properties": {
+                "UrgeBonus": "Resting"
+              }
+            }
+          }
+        },
+        "Mood": {
+          "properties": {},
+          "children": {
+            "Calm": {
+              "properties": {}
+            },
+            "Alert": {
+              "properties": {
+                "VisionRange": 1.2,
+                "ActionSpeed": 1.0
+              }
+            },
+            "Angry": {
+              "properties": {
+                "DamageBonus": 2,
+                "DefenseMultiplier": 0.9
+              }
+            },
+            "Terrified": {
+              "properties": {
+                "ActionSpeed": 1.5,
+                "DamageMultiplier": 0.5
+              }
+            },
+            "Excited": {
+              "properties": {
+                "ActionSpeed": 1.2,
+                "DamageBonus": 1
+              }
+            }
+          }
+        },
+        "Urge": {
+          "properties": {},
+          "children": {
+            "Wandering": {
+              "properties": {}
+            },
+            "Patrolling": {
+              "properties": {
+                "VisionRange": 1.0
+              }
+            },
+            "Hunting": {
+              "properties": {
+                "VisionRange": 1.5,
+                "DamageBonus": 2
+              }
+            },
+            "Fleeing": {
+              "properties": {
+                "ActionSpeed": 1.5,
+                "AvoidCombat": true
+              }
+            },
+            "Guarding": {
+              "properties": {
+                "StaysInPlace": true,
+                "DefenseBonus": 2
+              }
+            },
+            "Exploring": {
+              "properties": {
+                "VisionRange": 1.3
+              }
+            },
+            "Panicking": {
+              "properties": {
+                "ActionSpeed": 2.0,
+                "RandomMovement": true
+              }
+            },
+            "Resting": {
+              "properties": {
+                "StaysInPlace": true,
+                "HealthRegeneration": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "Bond": {
+      "properties": {},
+      "children": {
+        "Allegiance": {
+          "properties": {},
+          "children": {
+            "Wolfpack": {
+              "properties": {
+                "Call": "Howl",
+                "BondStrength": "Strong",
+                "GroupCoherence": true
+              }
+            },
+            "BanditClan": {
+              "properties": {
+                "Hierarchy": true,
+                "BondStrength": "Variable"
+              }
+            },
+            "GoblinTribe": {
+              "properties": {
+                "GroupCoherence": true,
+                "BondStrength": "Medium"
+              }
+            },
+            "PlayerFollowers": {
+              "properties": {
+                "BondStrength": "Strong",
+                "ProtectsBond": true
+              }
+            }
+          }
+        },
+        "Role": {
+          "properties": {},
+          "children": {
+            "Alpha": {
+              "properties": {
+                "Leadership": true,
+                "DamageBonus": 3,
+                "DefenseBonus": 2
+              }
+            },
+            "Packmate": {
+              "properties": {
+                "FollowsLeader": true
+              }
+            },
+            "Shaman": {
+              "properties": {
+                "CanCastSpells": true,
+                "ManaBonus": 2
+              }
+            },
+            "Scout": {
+              "properties": {
+                "VisionRange": 1.5,
+                "MovementSpeed": 1.3
+              }
+            },
+            "Follower": {
+              "properties": {
+                "FollowsLeader": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "Weapon": {
+      "properties": {},
+      "children": {
+        "Sword": {
+          "properties": {
+            "DamageType": "Slashing",
+            "BaseWeight": 3.5
+          },
+          "children": {
+            "Longsword": {
+              "properties": {
+                "BaseIntegrity": 100,
+                "ReachBonus": 0
+              }
+            },
+            "Rapier": {
+              "properties": {
+                "BaseIntegrity": 80,
+                "ReachBonus": 1
+              }
+            },
+            "Dirk": {
+              "properties": {
+                "BaseIntegrity": 70,
+                "ReachBonus": -1
+              }
+            },
+            "Zweihaender": {
+              "properties": {
+                "BaseIntegrity": 120,
+                "ReachBonus": 1
+              }
+            },
+            "ExecutionersSword": {
+              "properties": {
+                "BaseIntegrity": 110,
+                "ReachBonus": 0
+              }
+            }
+          }
+        },
+        "Axe": {
+          "properties": {
+            "DamageType": "Slashing",
+            "BaseWeight": 4.0
+          },
+          "children": {
+            "ExecutionersAxe": {
+              "properties": {
+                "BaseIntegrity": 115
+              }
+            }
+          }
+        },
+        "Blunt": {
+          "properties": {
+            "DamageType": "Bludgeoning",
+            "BaseWeight": 4.5
+          },
+          "children": {
+            "Mace": {
+              "properties": {
+                "BaseIntegrity": 90
+              }
+            },
+            "Warhammer": {
+              "properties": {
+                "BaseIntegrity": 120
+              }
+            },
+            "Sledgehammer": {
+              "properties": {
+                "BaseIntegrity": 130,
+                "RequiresStrength": 16
+              }
+            },
+            "Flail": {
+              "properties": {
+                "BaseIntegrity": 85,
+                "FlailBonus": true
+              }
+            },
+            "FryingPan": {
+              "properties": {
+                "BaseIntegrity": 60,
+                "Improvised": true
+              }
+            },
+            "ConsecratedMace": {
+              "properties": {
+                "BaseIntegrity": 100,
+                "Holy": true
+              }
+            }
+          }
+        },
+        "Polearm": {
+          "properties": {
+            "DamageType": "Piercing",
+            "BaseWeight": 3.0,
+            "ReachBonus": 2
+          },
+          "children": {
+            "Spear": {
+              "properties": {
+                "BaseIntegrity": 85
+              }
+            },
+            "Pitchfork": {
+              "properties": {
+                "BaseIntegrity": 70,
+                "Improvised": true
+              }
+            },
+            "Stake": {
+              "properties": {
+                "BaseIntegrity": 50
+              }
+            }
+          }
+        },
+        "Ranged": {
+          "properties": {
+            "BaseWeight": 2.0,
+            "RequiresAmmo": true
+          },
+          "children": {
+            "Sling": {
+              "properties": {
+                "DamageType": "Bludgeoning",
+                "BaseDamage": 6,
+                "BaseIntegrity": 40,
+                "InitialPV": 2,
+                "Speed": 100.0
+              }
+            },
+            "Bow": {
+              "properties": {
+                "DamageType": "Piercing",
+                "BaseDamage": 10,
+                "BaseIntegrity": 75,
+                "InitialPV": 5,
+                "Speed": 150.0
+              }
+            },
+            "HeavyCrossbow": {
+              "properties": {
+                "DamageType": "Piercing",
+                "BaseDamage": 18,
+                "BaseIntegrity": 95,
+                "InitialPV": 12,
+                "Speed": 300.0
+              }
+            },
+            "StakeLauncher": {
+              "properties": {
+                "DamageType": "Piercing",
+                "BaseDamage": 16,
+                "BaseIntegrity": 100,
+                "InitialPV": 10,
+                "SpecialAmmo": "Stake"
+              }
+            },
+            "HandMortar": {
+              "properties": {
+                "DamageType": "Bludgeoning",
+                "BaseDamage": 14,
+                "BaseIntegrity": 110,
+                "AoeRadius": 1
+              }
+            }
+          }
+        },
+        "Exotic": {
+          "properties": {
+            "BaseWeight": 2.5
+          },
+          "children": {
+            "Whip": {
+              "properties": {
+                "DamageType": "Slashing",
+                "BaseIntegrity": 40,
+                "ReachBonus": 1
+              }
+            },
+            "Bolas": {
+              "properties": {
+                "DamageType": "Bludgeoning",
+                "BaseIntegrity": 60,
+                "CanEntangle": true
+              }
+            },
+            "IcePick": {
+              "properties": {
+                "DamageType": "Piercing",
+                "BaseIntegrity": 80
+              }
+            },
+            "Machete": {
+              "properties": {
+                "DamageType": "Slashing",
+                "BaseIntegrity": 75
+              }
+            },
+            "AcidSyringe": {
+              "properties": {
+                "DamageType": "Acid",
+                "BaseIntegrity": 40,
+                "CanInflictStatus": true
+              }
+            },
+            "BrokenBottle": {
+              "properties": {
+                "DamageType": "Slashing",
+                "BaseIntegrity": 30,
+                "Improvised": true
+              }
+            },
+            "Stake": {
+              "properties": {
+                "DamageType": "Piercing",
+                "BaseIntegrity": 50
+              }
+            }
+          }
+        }
+      }
+    },
+    "Armor": {
+      "properties": {},
+      "children": {
+        "Head": {
+          "properties": {
+            "ArmorSlot": "Head"
+          },
+          "children": {
+            "IronMask": {
+              "properties": {
+                "BaseIntegrity": 100
+              }
+            }
+          }
+        },
+        "Chest": {
+          "properties": {
+            "ArmorSlot": "Chest"
+          },
+          "children": {
+            "LeatherArmor": {
+              "properties": {
+                "BaseIntegrity": 60
+              }
+            },
+            "ChainMail": {
+              "properties": {
+                "BaseIntegrity": 90
+              }
+            },
+            "Platemail": {
+              "properties": {
+                "BaseIntegrity": 120
+              }
+            },
+            "InquisitorsRobes": {
+              "properties": {
+                "BaseIntegrity": 50,
+                "Holy": true
+              }
+            },
+            "SilkWaistcoat": {
+              "properties": {
+                "BaseIntegrity": 40
+              }
+            },
+            "ChainmailHauberk": {
+              "properties": {
+                "BaseIntegrity": 100
+              }
+            },
+            "RingMail": {
+              "properties": {
+                "BaseIntegrity": 80
+              }
+            },
+            "StuddedLeatherArmor": {
+              "properties": {
+                "BaseIntegrity": 75
+              }
+            },
+            "ScaleMail": {
+              "properties": {
+                "BaseIntegrity": 85
+              }
+            },
+            "SplintMail": {
+              "properties": {
+                "BaseIntegrity": 110
+              }
+            },
+            "BandedMail": {
+              "properties": {
+                "BaseIntegrity": 105
+              }
+            },
+            "LeatherApron": {
+              "properties": {
+                "BaseIntegrity": 30
+              }
+            }
+          }
+        },
+        "Hands": {
+          "properties": {
+            "ArmorSlot": "Hands"
+          },
+          "children": {
+            "SilveredGauntlets": {
+              "properties": {
+                "BaseIntegrity": 70,
+                "Silver": true
+              }
+            }
+          }
+        },
+        "Feet": {
+          "properties": {
+            "ArmorSlot": "Feet"
+          },
+          "children": {
+            "LeadLinedBoots": {
+              "properties": {
+                "BaseIntegrity": 80,
+                "MovementPenalty": 0.9
+              }
+            }
+          }
+        },
+        "Accessory": {
+          "properties": {},
+          "children": {
+            "GraveyardDirt": {
+              "properties": {
+                "Undead": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "Consumable": {
+      "properties": {},
+      "children": {
+        "Potion": {
+          "properties": {
+            "IsConsumable": true,
+            "Stackable": true
+          },
+          "children": {
+            "HealingPotion": {
+              "properties": {
+                "EffectType": "Healing"
+              }
+            },
+            "ManaPotion": {
+              "properties": {
+                "EffectType": "ManaRestore"
+              }
+            },
+            "HastePotion": {
+              "properties": {
+                "EffectType": "Haste",
+                "Duration": 5
+              }
+            },
+            "InvisibilityDraught": {
+              "properties": {
+                "EffectType": "Invisibility",
+                "Duration": 3
+              }
+            },
+            "LevitationTonic": {
+              "properties": {
+                "EffectType": "Levitation",
+                "Duration": 4
+              }
+            },
+            "StoneskinElixir": {
+              "properties": {
+                "EffectType": "ArmorBonus",
+                "Magnitude": 5,
+                "Duration": 5
+              }
+            }
+          }
+        },
+        "Reagent": {
+          "properties": {
+            "IsReagent": true,
+            "Stackable": true
+          },
+          "children": {
+            "WildGarlic": {
+              "properties": {}
+            },
+            "Wolfsbane": {
+              "properties": {
+                "EffectiveAgainst": "Werewolf"
+              }
+            },
+            "SilverDust": {
+              "properties": {
+                "EffectiveAgainst": "Undead"
+              }
+            },
+            "HolyWater": {
+              "properties": {
+                "Holy": true
+              }
+            },
+            "GarlicClove": {
+              "properties": {
+                "EffectiveAgainst": "Vampire"
+              }
+            },
+            "Salt": {
+              "properties": {
+                "EffectiveAgainst": "Ghost"
+              }
+            }
+          }
+        },
+        "Alchemical": {
+          "properties": {
+            "Stackable": true
+          },
+          "children": {
+            "CorrosiveAcid": {
+              "properties": {
+                "DamageType": "Acid"
+              }
+            },
+            "AlchemistsFire": {
+              "properties": {
+                "DamageType": "Fire"
+              }
+            },
+            "LiquidLight": {
+              "properties": {
+                "Illuminates": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "Trap": {
+      "properties": {},
+      "children": {
+        "Mechanical": {
+          "properties": {
+            "TrapType": "Mechanical"
+          },
+          "children": {
+            "Tripwire": {
+              "properties": {
+                "TriggerType": "Contact"
+              }
+            },
+            "FloorSpikes": {
+              "properties": {
+                "TriggerType": "Pressure",
+                "DamageType": "Piercing"
+              }
+            },
+            "Snare": {
+              "properties": {
+                "TriggerType": "Contact",
+                "CanEntangle": true
+              }
+            },
+            "Pendulum": {
+              "properties": {
+                "TriggerType": "Pressure",
+                "DamageType": "Bludgeoning"
+              }
+            },
+            "Pitfall": {
+              "properties": {
+                "TriggerType": "Pressure",
+                "CausesFall": true
+              }
+            }
+          }
+        },
+        "Hazard": {
+          "properties": {
+            "TrapType": "Hazard"
+          },
+          "children": {
+            "GasVent": {
+              "properties": {
+                "TriggerType": "Proximity",
+                "DamageType": "Gas"
+              }
+            },
+            "FirePlate": {
+              "properties": {
+                "TriggerType": "Pressure",
+                "DamageType": "Fire"
+              }
+            },
+            "AcidSprinkler": {
+              "properties": {
+                "TriggerType": "Proximity",
+                "DamageType": "Acid"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Artifact": {
+      "properties": {
+        "Unique": true,
+        "Cursed": false
+      },
+      "children": {
+        "TheSaintsRib": {
+          "properties": {
+            "Holy": true
+          }
+        },
+        "VialOfTrueSun": {
+          "properties": {
+            "Holy": true,
+            "Illuminates": true
+          }
+        },
+        "CenserOfJoy": {
+          "properties": {
+            "Holy": true
+          }
+        },
+        "TheSilverShroud": {
+          "properties": {
+            "Silver": true
+          }
+        },
+        "MartyrrsBlood": {
+          "properties": {
+            "Holy": true
+          }
+        },
+        "TheGoldenKey": {
+          "properties": {
+            "UnlocksSpecial": true
+          }
+        },
+        "TheLichsEye": {
+          "properties": {
+            "Cursed": true
+          }
+        },
+        "BloodStainedCoin": {
+          "properties": {
+            "Cursed": true
+          }
+        },
+        "TheBlackNail": {
+          "properties": {
+            "Cursed": true
+          }
+        },
+        "MirrorOfSouls": {
+          "properties": {
+            "Unique": true
+          }
+        },
+        "TheHangmansRope": {
+          "properties": {
+            "Cursed": true
+          }
+        },
+        "HeartOfStone": {
+          "properties": {
+            "Unique": true
+          }
+        },
+        "TheBoneFlute": {
+          "properties": {
+            "Unique": true
+          }
+        },
+        "WitchsAthame": {
+          "properties": {
+            "DamageType": "Slashing"
+          }
+        },
+        "IronMaidenMask": {
+          "properties": {
+            "Cursed": true
+          }
+        },
+        "TheMidnightBell": {
+          "properties": {
+            "Unique": true
+          }
+        },
+        "ThirstingBlade": {
+          "properties": {
+            "DamageType": "Slashing",
+            "Cursed": true
+          }
+        }
+      }
+    },
+    "Ring": {
+      "properties": {
+        "Stackable": false,
+        "EquipSlot": "Ring"
+      },
+      "children": {
+        "Vitality": {
+          "properties": {
+            "HealthBonus": 10
+          }
+        },
+        "Duelist": {
+          "properties": {
+            "DamageBonus": 2
+          }
+        },
+        "Regeneration": {
+          "properties": {
+            "HealthRegen": 1
+          }
+        },
+        "Nightstalker": {
+          "properties": {
+            "DarkvisionBonus": 2,
+            "SneakBonus": 1
+          }
+        },
+        "MnemonicRetention": {
+          "properties": {
+            "ManaBonus": 5
+          }
+        },
+        "Grounding": {
+          "properties": {
+            "Resistance.Electricity": true
+          }
+        },
+        "Bloodlust": {
+          "properties": {
+            "DamageBonus": 3,
+            "HealthCost": true
+          }
+        },
+        "Grave": {
+          "properties": {
+            "UndeadAffinity": true
+          }
+        }
+      }
+    },
+    "Amulet": {
+      "properties": {
+        "EquipSlot": "Neck"
+      },
+      "children": {
+        "Dawn": {
+          "properties": {
+            "Holy": true
+          }
+        },
+        "Martyr": {
+          "properties": {
+            "Holy": true
+          }
+        },
+        "SilverWarding": {
+          "properties": {
+            "Silver": true
+          }
+        },
+        "Zealot": {
+          "properties": {
+            "Holy": true
+          }
+        },
+        "GorgonEye": {
+          "properties": {
+            "VisionBonus": 2
+          }
+        },
+        "Huntsman": {
+          "properties": {
+            "TrackingBonus": 1
+          }
+        },
+        "Leech": {
+          "properties": {
+            "HealthSteal": true
+          }
+        },
+        "Echoes": {
+          "properties": {
+            "SenseBonus": 1
+          }
+        }
+      }
+    },
+    "Unidentified": {
+      "properties": {
+        "comment": "Gating tag - presence disables Utility tags. Hazard tags still fire."
+      }
+    }
+  },
+  "tag_classes": {
+    "comment": "Tag classification system. Determines behavior under Unidentified status.",
+    "Intrinsic": [
+      "Material",
+      "Living",
+      "Feature",
+      "Shape",
+      "Phase",
+      "Movement",
+      "Mind",
+      "Bond",
+      "Terrain",
+      "Weapon",
+      "Armor",
+      "Ring",
+      "Amulet",
+      "Artifact"
+    ],
+    "Utility": [
+      "Logic",
+      "Container",
+      "Property",
+      "Consumable",
+      "Trap"
+    ],
+    "Hazard": [
+      "Logic.Trigger",
+      "Logic.Trap",
+      "Status.Burning",
+      "Trap.Mechanical",
+      "Trap.Hazard"
+    ]
+  }
+}

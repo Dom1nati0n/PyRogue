@@ -1,0 +1,33 @@
+{
+  "name": "Drunkard Bee (Phase 1 Excavator)",
+  "description": "Rapidly digs random tunnels in 3D space to create organic layouts. Used during Phase 1 to excavate the initial cavern structure across all depth layers.",
+  "type": "Routine",
+  "children": [
+    {
+      "type": "IsPhaseCondition",
+      "params": {
+        "target_phase": 1
+      }
+    },
+    {
+      "type": "CooldownGuard",
+      "params": {
+        "cooldown": 0.2,
+        "memory_key": "last_dig"
+      },
+      "children": [
+        {
+          "type": "Routine",
+          "children": [
+            {
+              "type": "Wander3DAction"
+            },
+            {
+              "type": "DigAction"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
