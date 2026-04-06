@@ -1,0 +1,75 @@
+{
+  "name": "Classic Default",
+  "description": "Default ASCII roguelike theme with retro terminal styling",
+  "palette": {
+    "black": "#000000",
+    "white": "#ffffff",
+    "gray": "#888888",
+    "dark_gray": "#444444",
+    "cyan": "#00ffff",
+    "red": "#ff0000",
+    "dark_red": "#cc0000",
+    "green": "#00ff00",
+    "dark_green": "#00cc00",
+    "yellow": "#ffff00",
+    "blue": "#0000ff",
+    "magenta": "#ff00ff"
+  },
+  "mapping": {
+    "NPC.WizBot": {
+      "char": "W",
+      "fg": "cyan",
+      "bg": "black"
+    },
+    "Player": {
+      "char": "@",
+      "fg": "yellow",
+      "bg": "black"
+    },
+    "Terrain.Wall.Stone": {
+      "char": "#",
+      "fg": "dark_gray",
+      "bg": "black"
+    },
+    "Terrain.Floor.Stone": {
+      "char": ".",
+      "fg": "gray",
+      "bg": "black"
+    },
+    "Terrain.Floor": {
+      "char": " ",
+      "fg": "white",
+      "bg": "black"
+    },
+    "Monster.Goblin": {
+      "char": "g",
+      "fg": "green",
+      "bg": "black"
+    },
+    "Monster.Orc": {
+      "char": "o",
+      "fg": "dark_red",
+      "bg": "black"
+    },
+    "Item.Weapon.Sword": {
+      "char": "/",
+      "fg": "yellow",
+      "bg": "black"
+    },
+    "Item.Consumable.Potion": {
+      "char": "!",
+      "fg": "red",
+      "bg": "black"
+    },
+    "Item": {
+      "char": "*",
+      "fg": "magenta",
+      "bg": "black"
+    }
+  },
+  "fallback": {
+    "char": "?",
+    "fg": "white",
+    "bg": "black"
+  }
+}
