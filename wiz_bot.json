@@ -1,0 +1,42 @@
+{
+  "entity_type": "wiz_bot",
+  "name": "WizBot",
+  "description": "Autonomous testing bot for stress-testing and debugging the engine",
+  "spawn_position": [10, 10],
+  "components": {
+    "PositionComponent": {
+      "x": 10,
+      "y": 10
+    },
+    "Tags": [
+      "NPC",
+      "NPC.WizBot",
+      "Dangerous"
+    ],
+    "Health": {
+      "current": 100,
+      "maximum": 100
+    },
+    "PlayerController": {
+      "session_id": "wiz_bot_debug",
+      "is_connected": true,
+      "reconnect_timer": 0.0,
+      "last_processed_sequence_id": null
+    },
+    "DebugComponent": {
+      "enabled": true,
+      "frame_count": 0,
+      "last_log_time": 0.0,
+      "test_mode": "exploration",
+      "log_interval": 60,
+      "stats": {},
+      "teleport_dest": null
+    }
+  },
+  "behavior": {
+    "mode": "exploration",
+    "explore_chance": 0.7,
+    "teleport_on_stuck": true,
+    "stuck_threshold_frames": 300
+  }
+}

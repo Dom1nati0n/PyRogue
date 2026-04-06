@@ -1,0 +1,69 @@
+{
+  "server": {
+    "name": "PyRogue Multiplayer Engine",
+    "port": 8000
+  },
+  "multiplayer": {
+    "enabled": true,
+    "max_players": 100,
+    "tick_rate_hz": 60,
+    "reconnect_timeout_seconds": 30,
+    "max_disconnected_ai_takeover": true
+  },
+  "replication": {
+    "enabled": true,
+    "mode": "fov_culled",
+    "modes": {
+      "full_state": {
+        "description": "Broadcast all entities to all clients. Bandwidth heavy but simple. Good for <10 players.",
+        "enabled": false
+      },
+      "fov_culled": {
+        "description": "Send only entities in player FOV + adjacent tiles. Scales to 100+ players.",
+        "enabled": true,
+        "player_view_radius": 8,
+        "include_adjacent_tiles": true
+      },
+      "delta_compressed": {
+        "description": "Send only changed fields. Reduces bandwidth by 60-80% when combined with FOV culling.",
+        "enabled": true,
+        "enabled_with_fov_culled": true
+      }
+    },
+    "player_view_radius": 8,
+    "include_adjacent_tiles": true,
+    "use_delta_compression": true,
+    "max_entities_per_client": null
+  },
+  "gameplay": {
+    "simulation_speed": 1.0,
+    "tick_rate": 0.050,
+    "sync_model": "authoritative"
+  },
+  "gamemode": {
+    "type": "survival",
+    "spawn_points": [
+      [10, 10, 12],
+      [15, 10, 12],
+      [20, 10, 12],
+      [10, 15, 12],
+      [15, 15, 12],
+      [20, 15, 12],
+      [10, 20, 12],
+      [15, 20, 12],
+      [20, 20, 12]
+    ],
+    "properties": {
+      "time_limit_ms": 0
+    }
+  },
+  "world_gen": {
+    "width": 200,
+    "height": 200,
+    "max_depth": 36,
+    "sea_level": 12,
+    "max_bees": 50,
+    "spawn_point": [10, 10, 12],
+    "spawn_safety_radius": 5
+  }
+}
